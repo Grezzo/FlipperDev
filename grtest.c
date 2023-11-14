@@ -22,8 +22,8 @@ typedef struct {
 static UnzipApp* unzip_app_alloc() {
     UnzipApp* instance = malloc(sizeof(UnzipApp));
     instance->view_port = view_port_alloc();
-    view_port_draw_callback_set(instance->view_port, render_callback, instance);
-    view_port_input_callback_set(instance->view_port, input_callback, instance);
+    //view_port_draw_callback_set(instance->view_port, render_callback, instance);
+    //view_port_input_callback_set(instance->view_port, input_callback, instance);
     instance->gui = furi_record_open(RECORD_GUI);
     gui_add_view_port(instance->gui, instance->view_port, GuiLayerFullscreen);
     instance->mutex = furi_mutex_alloc(FuriMutexTypeNormal);
