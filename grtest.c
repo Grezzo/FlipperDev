@@ -47,7 +47,7 @@ int32_t grtest_app(void* p) {
     FURI_LOG_I("TEST", "Hello world");
     FURI_LOG_I("TEST", "I'm grtest!");
 
-    UnZipApp* instance = unzip_app_alloc();
+    UnzipApp* instance = unzip_app_alloc();
     FuriString* file_path = furi_string_alloc();
 
     furi_string_set(file_path, ZIP_FOLDER);
