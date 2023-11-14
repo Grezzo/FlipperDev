@@ -48,6 +48,7 @@ static void unzip_app_free(UnzipApp* instance) {
 
 int32_t grtest_app(void* p) {
     UNUSED(p);
+    UNUSED(res);
     FURI_LOG_I("TEST", "Hello world");
     FURI_LOG_I("TEST", "I'm grtest!");
 
