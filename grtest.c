@@ -57,7 +57,7 @@ int32_t grtest_app(void* p) {
     furi_string_set(file_path, ZIP_FOLDER);
     DialogsFileBrowserOptions browser_options;
     dialog_file_browser_set_basic_options(
-            &browser_options, ZIP_EXTENSION, &I_qrcode_10px);
+            &browser_options, ZIP_EXTENSION, &I_zip_file_10px);
     browser_options.hide_ext = true;
     browser_options.base_path = ZIP_FOLDER;
 
