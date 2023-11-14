@@ -66,6 +66,6 @@ int32_t grtest_app(void* p) {
 
     furi_record_close(RECORD_DIALOGS);
     furi_string_free(file_path);
-    zip_app_free(instance);
+    unzip_app_free(instance);
     return 0;
 }
