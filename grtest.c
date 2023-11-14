@@ -48,7 +48,6 @@ static void unzip_app_free(UnzipApp* instance) {
 
 int32_t grtest_app(void* p) {
     UNUSED(p);
-    UNUSED(res);
     FURI_LOG_I("TEST", "Hello world");
     FURI_LOG_I("TEST", "I'm grtest!");
 
@@ -64,6 +63,7 @@ int32_t grtest_app(void* p) {
 
     DialogsApp* dialogs = furi_record_open(RECORD_DIALOGS);
     bool res = dialog_file_browser_show(dialogs, file_path, file_path, &browser_options);
+    UNUSED(res);
 
     furi_record_close(RECORD_DIALOGS);
     furi_string_free(file_path);
