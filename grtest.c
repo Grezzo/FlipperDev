@@ -13,7 +13,7 @@ typedef struct {
     Gui* gui;
     ViewPort* view_port;
     FuriMutex** mutex;
-} UnZipApp;
+} UnzipApp;
 
 /**
  * Allocate the unzip app
