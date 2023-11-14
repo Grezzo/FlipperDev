@@ -9,7 +9,7 @@ App(
     fap_category="Examples",
     # Optional values
     # fap_version="0.1",
-    fap_icon="grtest.png",  # 10x10 1-bit PNG
+    fap_icon="icons/zip_file_10px.png",  # 10x10 1-bit PNG
     # fap_description="A simple app",
     # fap_author="J. Doe",
     # fap_weburl="https://github.com/user/grtest",
