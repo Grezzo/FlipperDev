@@ -54,18 +54,29 @@ int32_t grtest_app(void* p) {
     UnzipApp* instance = unzip_app_alloc();
     FuriString* file_path = furi_string_alloc();
 
-    furi_string_set(file_path, ZIP_FOLDER);
-    DialogsFileBrowserOptions browser_options;
-    dialog_file_browser_set_basic_options(
-            &browser_options, ZIP_EXTENSION, &I_zip_file_10px);
-    browser_options.hide_ext = true;
-    browser_options.base_path = ZIP_FOLDER;
-
-    DialogsApp* dialogs = furi_record_open(RECORD_DIALOGS);
-    bool res = dialog_file_browser_show(dialogs, file_path, file_path, &browser_options);
-    UNUSED(res);
-
-    furi_record_close(RECORD_DIALOGS);
+    do {
+        furi_string_set(file_path, ZIP_FOLDER);
+        DialogsFileBrowserOptions browser_options;
+        dialog_file_browser_set_basic_options(
+                &browser_options, ZIP_EXTENSION, &I_zip_file_10px);
+        browser_options.hide_ext = true;
+        browser_options.base_path = ZIP_FOLDER;
+    
+        DialogsApp* dialogs = furi_record_open(RECORD_DIALOGS);
+        bool res = dialog_file_browser_show(dialogs, file_path, file_path, &browser_options);
+        furi_record_close(RECORD_DIALOGS);
+        if (!res) {
+            FURI_LOG_E(TAG, "No file selected");
+            break;
+        }
+        FURI_LOG_E(TAG, furi_string_get_cstr(file_path));
+        Storage* storage = furi_record_open(RECORD_STORAGE);
+        FlipperFormat* file = flipper_format_file_alloc(storage);
+        if (!flipper_format_file_open_existing(file, file_path)) {
+            FURI_LOG_E(TAG, "Unable to open file");
+            break;
+        }
+    } while (true);
     furi_string_free(file_path);
     unzip_app_free(instance);
     return 0;
