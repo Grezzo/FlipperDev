@@ -66,14 +66,14 @@ int32_t grtest_app(void* p) {
         bool res = dialog_file_browser_show(dialogs, file_path, file_path, &browser_options);
         furi_record_close(RECORD_DIALOGS);
         if (!res) {
-            FURI_LOG_E(TAG, "No file selected");
+            FURI_LOG_E("TEST", "No file selected");
             break;
         }
-        FURI_LOG_E(TAG, furi_string_get_cstr(file_path));
+        FURI_LOG_E("TEST", furi_string_get_cstr(file_path));
         Storage* storage = furi_record_open(RECORD_STORAGE);
         FlipperFormat* file = flipper_format_file_alloc(storage);
         if (!flipper_format_file_open_existing(file, file_path)) {
-            FURI_LOG_E(TAG, "Unable to open file");
+            FURI_LOG_E("TEST", "Unable to open file");
             break;
         }
     } while (true);
