@@ -2,6 +2,7 @@
 #include <gui/gui.h>
 #include <storage/storage.h>
 #include <dialogs/dialogs.h>
+#include <lib/flipper_format/flipper_format.h>
 #include "lib/miniz/miniz.h"
 
 
