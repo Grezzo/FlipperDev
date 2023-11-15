@@ -73,7 +73,7 @@ int32_t grtest_app(void* p) {
         FURI_LOG_E("TEST", furi_string_get_cstr(file_path));
         Storage* storage = furi_record_open(RECORD_STORAGE);
         FlipperFormat* file = flipper_format_file_alloc(storage);
-        if (!flipper_format_file_open_existing(file, file_path)) {
+        if (!flipper_format_file_open_existing(file, furi_string_get_cstr(file_path))) {
             FURI_LOG_E("TEST", "Unable to open file");
             break;
         }
