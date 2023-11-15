@@ -2,7 +2,7 @@
 
 App(
     appid="grtest",  # Must be unique
-    name="UnZip",  # Displayed in menus
+    name="UnZip (in dev)",  # Displayed in menus
     apptype=FlipperAppType.EXTERNAL,
     entry_point="grtest_app",
     stack_size=2 * 1024,
