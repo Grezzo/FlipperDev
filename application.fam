@@ -17,6 +17,6 @@ App(
 ),
 fap_private_libs=[
     Lib(
-        name="ziplib",
+        name="miniz",
     ),
 ],
