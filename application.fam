@@ -14,4 +14,9 @@ App(
     fap_author="Graeme Robinson",
     fap_weburl="https://github.com/Grezzo/FlipperDev",
     fap_icon_assets="images",  # Image assets to compile for this application
-)
+),
+fap_private_libs=[
+    Lib(
+        name="ziplib",
+    ),
+],
