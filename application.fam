@@ -2,16 +2,16 @@
 
 App(
     appid="grtest",  # Must be unique
-    name="App grtest",  # Displayed in menus
+    name="UnZip",  # Displayed in menus
     apptype=FlipperAppType.EXTERNAL,
     entry_point="grtest_app",
     stack_size=2 * 1024,
-    fap_category="Examples",
+    fap_category="Tools",
     # Optional values
     # fap_version="0.1",
     fap_icon="images/zip_file_10px.png",  # 10x10 1-bit PNG
-    # fap_description="A simple app",
-    # fap_author="J. Doe",
-    # fap_weburl="https://github.com/user/grtest",
+    fap_description="Unzips Zip Archives (.zip files)",
+    fap_author="Graeme Robinson",
+    fap_weburl="https://github.com/Grezzo/FlipperDev",
     fap_icon_assets="images",  # Image assets to compile for this application
 )
